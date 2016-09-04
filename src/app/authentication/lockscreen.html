@@ -8,9 +8,9 @@
         </div>
         <h3>John Smith</h3>
         <p>Your are in lock screen. Main app was shut down and you need to enter your passwor to go back to app.</p>
-        <form class="m-t" role="form" action="index.html">
+        <form class="m-t" role="form" ng-submit="unlockUser(user_password)">
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="******" required="">
+                <input type="password" class="form-control" placeholder="******" ng-model="user_password" required="">
             </div>
             <button type="submit" class="btn btn-primary block full-width">Unlock</button>
         </form>

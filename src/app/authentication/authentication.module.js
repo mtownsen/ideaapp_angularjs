@@ -70,11 +70,16 @@ angular.module('myApp.auth', [ 'ui.router'])
             url: rails_server_path + '/users/sign_in.json',
             data: credentials
         }).then(function successCallback(response) {
+            this.user_email = user_email;
             StoreLoginData(user_email, response.data.authentication_token);
             $location.path('/dashboard');
         }, function errorCallback(error) {
             $scope.loginStatus = -1;
         });
+    }
+
+    $scope.unlockUser = function(user_password) {
+        $scope.loginUser(localStorage.email, user_password);
     }
 
     $scope.forgotPassword = function(user_email) {
