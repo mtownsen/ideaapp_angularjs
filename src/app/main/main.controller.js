@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('inspinia')
+angular.module('myApp')
 
 	.config(['$stateProvider', function($stateProvider) {
 
