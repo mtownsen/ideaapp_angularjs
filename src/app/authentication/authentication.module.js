@@ -37,14 +37,15 @@ angular.module('myApp.auth', [ 'ui.router'])
 
     var rails_server_path = AppSettings.apiUrl;
     
-    $scope.registerUser = function(first_name, last_name, user_email, user_password, user_password_confirmation) {
+    $scope.registerUser = function(first_name, last_name, user_email, user_password, user_password_confirmation, company_name) {
         var credentials = {
             user: {
                 first_name: first_name,
                 last_name: last_name,
                 email: user_email,
                 password: user_password,
-                password_confirmation: user_password_confirmation
+                password_confirmation: user_password_confirmation, 
+                company_name: company_name
             }
         };
         $http({
